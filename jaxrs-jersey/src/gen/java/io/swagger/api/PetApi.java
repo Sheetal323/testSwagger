@@ -14,7 +14,6 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
-import io.swagger.model.ModelApiResponse;
 import io.swagger.model.Pet;
 
 import java.util.Map;
@@ -37,7 +36,7 @@ import javax.validation.constraints.*;
 @Path("/pet")
 
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaJerseyServerCodegen", date = "2020-10-06T11:06:52.677Z[GMT]")public class PetApi  {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaJerseyServerCodegen", date = "2020-10-06T11:20:04.761Z[GMT]")public class PetApi  {
    private final PetApiService delegate;
 
    public PetApi(@Context ServletConfig servletContext) {
@@ -75,25 +74,6 @@ import javax.validation.constraints.*;
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.addPet(body,securityContext);
-    }
-    @DELETE
-    @Path("/{petId}")
-    
-    
-    @Operation(summary = "Deletes a pet", description = "", security = {
-        @SecurityRequirement(name = "petstore_auth", scopes = {
-            ""        })    }, tags={ "pet" })
-    @ApiResponses(value = { 
-        @ApiResponse(responseCode = "400", description = "Invalid ID supplied"),
-        
-        @ApiResponse(responseCode = "404", description = "Pet not found") })
-    public Response deletePet(@Parameter(in = ParameterIn.PATH, description = "Pet id to delete",required=true) @PathParam("petId") Long petId
-,
-@Parameter(in = ParameterIn.HEADER, description = "" )@HeaderParam("api_key") String apiKey
-
-,@Context SecurityContext securityContext)
-    throws NotFoundException {
-        return delegate.deletePet(petId,apiKey,securityContext);
     }
     @GET
     @Path("/findByStatus")
@@ -179,21 +159,5 @@ import javax.validation.constraints.*;
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.updatePetWithForm(petId,name,status,securityContext);
-    }
-    @POST
-    @Path("/{petId}/uploadImage")
-    @Consumes({ "application/octet-stream" })
-    @Produces({ "application/json" })
-    @Operation(summary = "uploads an image", description = "", security = {
-        @SecurityRequirement(name = "petstore_auth", scopes = {
-            ""        })    }, tags={ "pet" })
-    @ApiResponses(value = { 
-        @ApiResponse(responseCode = "200", description = "successful operation", content = @Content(schema = @Schema(implementation = ModelApiResponse.class))) })
-    public Response uploadFile(@Parameter(in = ParameterIn.PATH, description = "ID of pet to update",required=true) @PathParam("petId") Long petId
-,@Parameter(in = ParameterIn.DEFAULT, description = "" ) Object body
-
-,@Context SecurityContext securityContext)
-    throws NotFoundException {
-        return delegate.uploadFile(petId,bodyInputStream, bodyDetail,securityContext);
     }
 }
