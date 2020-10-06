@@ -13,7 +13,6 @@
 package io.swagger.client.api;
 
 import io.swagger.client.ApiException;
-import io.swagger.client.model.ModelApiResponse;
 import io.swagger.client.model.Pet;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -43,22 +42,6 @@ public class PetApiTest {
     public void addPetTest() throws ApiException {
         Pet body = null;
         api.addPet(body);
-
-        // TODO: test validations
-    }
-    /**
-     * Deletes a pet
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void deletePetTest() throws ApiException {
-        Long petId = null;
-        String apiKey = null;
-        api.deletePet(petId, apiKey);
 
         // TODO: test validations
     }
@@ -136,22 +119,6 @@ public class PetApiTest {
         String name = null;
         String status = null;
         api.updatePetWithForm(petId, name, status);
-
-        // TODO: test validations
-    }
-    /**
-     * uploads an image
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void uploadFileTest() throws ApiException {
-        Long petId = null;
-        Object body = null;
-        ModelApiResponse response = api.uploadFile(petId, body);
 
         // TODO: test validations
     }

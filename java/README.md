@@ -2,7 +2,7 @@
 
 Swagger Petstore
 - API version: 1.0.0
-  - Build date: 2020-10-06T11:06:49.421Z[GMT]
+  - Build date: 2020-10-06T11:20:00.591Z[GMT]
 
 This is a sample Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/). 
 
@@ -94,34 +94,6 @@ public class PetApiExample {
             apiInstance.addPet(body);
         } catch (ApiException e) {
             System.err.println("Exception when calling PetApi#addPet");
-            e.printStackTrace();
-        }
-    }
-}
-import io.swagger.client.*;
-import io.swagger.client.auth.*;
-import io.swagger.client.model.*;
-import io.swagger.client.api.PetApi;
-
-import java.io.File;
-import java.util.*;
-
-public class PetApiExample {
-
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-        // Configure OAuth2 access token for authorization: petstore_auth
-        OAuth petstore_auth = (OAuth) defaultClient.getAuthentication("petstore_auth");
-        petstore_auth.setAccessToken("YOUR ACCESS TOKEN");
-
-        PetApi apiInstance = new PetApi();
-        Long petId = 789L; // Long | Pet id to delete
-        String apiKey = "apiKey_example"; // String | 
-        try {
-            apiInstance.deletePet(petId, apiKey);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling PetApi#deletePet");
             e.printStackTrace();
         }
     }
@@ -268,35 +240,6 @@ public class PetApiExample {
         }
     }
 }
-import io.swagger.client.*;
-import io.swagger.client.auth.*;
-import io.swagger.client.model.*;
-import io.swagger.client.api.PetApi;
-
-import java.io.File;
-import java.util.*;
-
-public class PetApiExample {
-
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-        // Configure OAuth2 access token for authorization: petstore_auth
-        OAuth petstore_auth = (OAuth) defaultClient.getAuthentication("petstore_auth");
-        petstore_auth.setAccessToken("YOUR ACCESS TOKEN");
-
-        PetApi apiInstance = new PetApi();
-        Long petId = 789L; // Long | ID of pet to update
-        Object body = null; // Object | 
-        try {
-            ModelApiResponse result = apiInstance.uploadFile(petId, body);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling PetApi#uploadFile");
-            e.printStackTrace();
-        }
-    }
-}
 ```
 
 ## Documentation for API Endpoints
@@ -306,13 +249,11 @@ All URIs are relative to *https://virtserver.swaggerhub.com/sheetalC/people/1.0.
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *PetApi* | [**addPet**](docs/PetApi.md#addPet) | **POST** /pet | Add a new pet to the store
-*PetApi* | [**deletePet**](docs/PetApi.md#deletePet) | **DELETE** /pet/{petId} | Deletes a pet
 *PetApi* | [**findPetsByStatus**](docs/PetApi.md#findPetsByStatus) | **GET** /pet/findByStatus | Finds Pets by status
 *PetApi* | [**findPetsByTags**](docs/PetApi.md#findPetsByTags) | **GET** /pet/findByTags | Finds Pets by tags
 *PetApi* | [**getPetById**](docs/PetApi.md#getPetById) | **GET** /pet/{petId} | Find pet by ID
 *PetApi* | [**updatePet**](docs/PetApi.md#updatePet) | **PUT** /pet | Update an existing pet
 *PetApi* | [**updatePetWithForm**](docs/PetApi.md#updatePetWithForm) | **POST** /pet/{petId} | Updates a pet in the store with form data
-*PetApi* | [**uploadFile**](docs/PetApi.md#uploadFile) | **POST** /pet/{petId}/uploadImage | uploads an image
 *StoreApi* | [**deleteOrder**](docs/StoreApi.md#deleteOrder) | **DELETE** /store/order/{orderId} | Delete purchase order by ID
 *StoreApi* | [**getInventory**](docs/StoreApi.md#getInventory) | **GET** /store/inventory | Returns pet inventories by status
 *StoreApi* | [**getOrderById**](docs/StoreApi.md#getOrderById) | **GET** /store/order/{orderId} | Find purchase order by ID

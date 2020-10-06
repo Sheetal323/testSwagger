@@ -5,13 +5,11 @@ All URIs are relative to *https://virtserver.swaggerhub.com/sheetalC/people/1.0.
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addPet**](PetApi.md#addPet) | **POST** /pet | Add a new pet to the store
-[**deletePet**](PetApi.md#deletePet) | **DELETE** /pet/{petId} | Deletes a pet
 [**findPetsByStatus**](PetApi.md#findPetsByStatus) | **GET** /pet/findByStatus | Finds Pets by status
 [**findPetsByTags**](PetApi.md#findPetsByTags) | **GET** /pet/findByTags | Finds Pets by tags
 [**getPetById**](PetApi.md#getPetById) | **GET** /pet/{petId} | Find pet by ID
 [**updatePet**](PetApi.md#updatePet) | **PUT** /pet | Update an existing pet
 [**updatePetWithForm**](PetApi.md#updatePetWithForm) | **POST** /pet/{petId} | Updates a pet in the store with form data
-[**uploadFile**](PetApi.md#uploadFile) | **POST** /pet/{petId}/uploadImage | uploads an image
 
 <a name="addPet"></a>
 # **addPet**
@@ -61,58 +59,6 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json, application/xml
- - **Accept**: Not defined
-
-<a name="deletePet"></a>
-# **deletePet**
-> deletePet(petId, apiKey)
-
-Deletes a pet
-
-### Example
-```java
-// Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.PetApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: petstore_auth
-OAuth petstore_auth = (OAuth) defaultClient.getAuthentication("petstore_auth");
-petstore_auth.setAccessToken("YOUR ACCESS TOKEN");
-
-PetApi apiInstance = new PetApi();
-Long petId = 789L; // Long | Pet id to delete
-String apiKey = "apiKey_example"; // String | 
-try {
-    apiInstance.deletePet(petId, apiKey);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PetApi#deletePet");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **petId** | **Long**| Pet id to delete |
- **apiKey** | **String**|  | [optional]
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[petstore_auth](../README.md#petstore_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: Not defined
 
 <a name="findPetsByStatus"></a>
@@ -379,57 +325,4 @@ null (empty response body)
 
  - **Content-Type**: application/x-www-form-urlencoded
  - **Accept**: Not defined
-
-<a name="uploadFile"></a>
-# **uploadFile**
-> ModelApiResponse uploadFile(petId, body)
-
-uploads an image
-
-### Example
-```java
-// Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.PetApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: petstore_auth
-OAuth petstore_auth = (OAuth) defaultClient.getAuthentication("petstore_auth");
-petstore_auth.setAccessToken("YOUR ACCESS TOKEN");
-
-PetApi apiInstance = new PetApi();
-Long petId = 789L; // Long | ID of pet to update
-Object body = null; // Object | 
-try {
-    ModelApiResponse result = apiInstance.uploadFile(petId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PetApi#uploadFile");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **petId** | **Long**| ID of pet to update |
- **body** | **Object**|  | [optional]
-
-### Return type
-
-[**ModelApiResponse**](ModelApiResponse.md)
-
-### Authorization
-
-[petstore_auth](../README.md#petstore_auth)
-
-### HTTP request headers
-
- - **Content-Type**: application/octet-stream
- - **Accept**: application/json
 
